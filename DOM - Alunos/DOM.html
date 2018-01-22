@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body onkeydown="key(event)">
+
+    <nav>
+        <div class="nav">
+            <img src="logo-dark.png" alt="">
+
+        </div>
+    </nav>
+
+    <section class="corpo">
+        <div class="card">
+            <header>
+                <h1>Manipulando a DOM</h1>
+            </header>
+            <section class="cardBody">
+                <div class="addR">
+                    <ul class="list" id="list">
+                        <h3>Remova e Adicione itens a lista </h3>
+                        <li id="li1" class="list-item">Item 1</li>
+                        <li class="list-item">Item 2</li>
+                        <li class="list-item">Item 3</li>
+                    </ul>
+                    <div class="controles">
+                        <button id="add" class="controle btn btnControl"> +</button>
+                        <button id="tira" class="controle btn btnControl"> - </button>
+                    </div>
+                </div>
+                <section class="clicks">
+                    <h3>Evento de Click</h3>
+                    <input id="input" type="checkbox">
+                    <button id="change" class="btn">Click Me</button>
+                </section>
+
+                <section class="events">
+                    <label>Escolha o Melhor Sorvete :
+                        <select id="sorvete">
+                            <option value="">Selecione…</option>
+                            <option value="1">Morango</option>
+                            <option value="2">Creme</option>
+                            <option value="3">Chocolate</option>
+                            <option value="4">Leite Ninho Trufado</option>
+                        </select>
+                    </label>
+
+                    <div id="divAzul">
+
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section>
+    <script>
+
+
+       
+    </script>
+</body>
+
+</html>
