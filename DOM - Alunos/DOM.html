@@ -64,7 +64,94 @@
     <script>
 
 
-       
+        // Change
+        var x = document.querySelector('#sorvete');
+        x.addEventListener('change', function () {
+            alert('O melhor Sorvete é: ' + x.options[x.selectedIndex].text)
+        })
+
+
+        // Add itens a lista 
+        document.querySelector('#add').addEventListener('click', function () {
+            var myLi = document.createElement('li');
+            myLi.classList.add('list-item');
+            myLi.innerText = 'Item ' + (document.getElementById('list').getElementsByClassName("list-item").length + 1);
+            document.querySelector('.list-item:last-child').insertAdjacentHTML('afterend', myLi.outerHTML);
+            cor();
+        });
+
+        document.querySelector('#tira').addEventListener('click', function () {
+            if (document.getElementById('list').getElementsByClassName("list-item").length > 1) {
+                document.querySelector('.list-item:last-child').remove()
+            }
+        });
+
+        // HOVER
+        function cor() {
+            var lis = document.getElementsByClassName("list-item")
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener("mouseover", function () {
+                    this.style.backgroundColor = '#3F51B5';
+                    this.style.color = '#FFFFFF';
+                });
+                lis[i].addEventListener("mouseleave", function () {
+                    this.style.backgroundColor = '#ECEFF1'
+                    this.style.color = '#444';
+                });
+            };
+
+        }
+        cor();
+
+        // Mudar atributo usando eventos
+        function input() {
+            document.querySelector('#change').addEventListener('click', function () {
+
+                if (document.getElementById('input').type == 'checkbox') {
+                    document.querySelector('input').setAttribute('type', 'radio');
+                } else {
+                    document.querySelector('input').setAttribute('type', 'checkbox');
+
+                };
+            });
+        };
+        input();
+
+        function key(event) {
+            let x = event.keyCode;
+            // console.log(x)
+            if (x == 65) {
+                const myDiv = document.createElement('div');
+                myDiv.classList.add('blueBlock');
+                document.getElementById('divAzul').innerHTML = myDiv.outerHTML;
+                document.querySelector('.blueBlock').style.backgroundColor = '#3F51B5';
+                document.querySelector('.blueBlock').style.width = '800px';
+                document.querySelector('.blueBlock').style.height = '200px';
+
+            } else if (document.querySelector('.blueBlock') != null && x == 82) {
+                document.querySelector('.blueBlock').remove();
+
+
+            };
+        };
+
+//         document.querySelector('#eu').addEventListener('keyup',function(){
+// 	console.log(this.value)
+// });
+
+
+
+// Exemplo
+// document.querySelector('input').addEventListener('keyup',function(event){
+// 	if(event.keyCode == 13){
+// 		if(this.value !== ''){
+// 			this.style.backgroundColor = 'green'
+// 	}else{
+// 	    this.style.backgroundColor = 'red'
+// 		}
+// 	}	
+	
+//  });
     </script>
 </body>
 
